@@ -3,7 +3,7 @@ import { ArrowLeft, Check, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { ActionButton } from "@/components/healthguard";
 
-export const Route = createFileRoute("/onboarding")({
+export const Route = createFileRoute("/_authenticated/onboarding")({
   head: () => ({ meta: [
     { title: "Анкета — HealthGuard" }, { name: "description", content: "Настройка персонального профиля HealthGuard." },
     { property: "og:title", content: "Анкета — HealthGuard" }, { property: "og:description", content: "Настройте цели и предпочтения в HealthGuard." },
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/onboarding")({
 
 const steps = ["О вас", "Цель", "Активность", "Питание"];
 function Onboarding() {
-  const navigate = useNavigate({ from: "/onboarding" }); const [step, setStep] = useState(0);
+  const navigate = useNavigate(); const [step, setStep] = useState(0);
   const next = () => step < 3 ? setStep(step + 1) : navigate({ to: "/today" });
   return <main className="mx-auto flex min-h-dvh w-full max-w-md flex-col bg-background px-5 py-7">
     <header className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3">

@@ -3,7 +3,7 @@ import { Apple, Coffee, Moon, Plus, Sun } from "lucide-react";
 import { useState } from "react";
 import { ActionButton, AppShell, DemoBadge, ProgressBar, ScreenCard } from "@/components/healthguard";
 
-export const Route = createFileRoute("/nutrition")({ head: () => ({ meta: [
+export const Route = createFileRoute("/_authenticated/nutrition")({ head: () => ({ meta: [
   { title: "Питание — HealthGuard" }, { name: "description", content: "Дневник питания и приёмов пищи." }, { property: "og:title", content: "Питание — HealthGuard" }, { property: "og:description", content: "Удобный дневник питания." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
 ]}), component: Nutrition });
 

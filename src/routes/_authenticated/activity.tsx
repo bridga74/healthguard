@@ -3,7 +3,7 @@ import { Bike, Clock3, Footprints, Plus, Timer, TrendingUp } from "lucide-react"
 import { useState } from "react";
 import { ActionButton, AppShell, DemoBadge, ProgressBar, ScreenCard } from "@/components/healthguard";
 
-export const Route = createFileRoute("/activity")({ head: () => ({ meta: [
+export const Route = createFileRoute("/_authenticated/activity")({ head: () => ({ meta: [
   { title: "Активность — HealthGuard" }, { name: "description", content: "Шаги, тренировки и активные минуты." }, { property: "og:title", content: "Активность — HealthGuard" }, { property: "og:description", content: "Контроль ежедневной активности." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
 ]}), component: ActivityPage });
 

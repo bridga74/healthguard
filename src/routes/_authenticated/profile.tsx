@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Bell, ChevronRight, CircleHelp, LogOut, Settings, Target, UserRound } from "lucide-react";
 import { AppShell, DemoBadge, ScreenCard } from "@/components/healthguard";
 
-export const Route = createFileRoute("/profile")({ head: () => ({ meta: [
+export const Route = createFileRoute("/_authenticated/profile")({ head: () => ({ meta: [
   { title: "Профиль — HealthGuard" }, { name: "description", content: "Параметры, цель и настройки профиля HealthGuard." }, { property: "og:title", content: "Профиль — HealthGuard" }, { property: "og:description", content: "Настройки персонального профиля." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
 ]}), component: Profile });
 
