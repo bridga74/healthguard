@@ -14,7 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      onboarding_answers: {
+        Row: {
+          activity_level: string
+          age: number | null
+          created_at: string
+          diet_preference: string
+          goal: string
+          height_cm: number | null
+          updated_at: string
+          user_id: string
+          weight_kg: number | null
+        }
+        Insert: {
+          activity_level: string
+          age?: number | null
+          created_at?: string
+          diet_preference: string
+          goal: string
+          height_cm?: number | null
+          updated_at?: string
+          user_id: string
+          weight_kg?: number | null
+        }
+        Update: {
+          activity_level?: string
+          age?: number | null
+          created_at?: string
+          diet_preference?: string
+          goal?: string
+          height_cm?: number | null
+          updated_at?: string
+          user_id?: string
+          weight_kg?: number | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          activity_level: string | null
+          age: number | null
+          created_at: string
+          goal: string | null
+          height_cm: number | null
+          name: string
+          onboarding_completed: boolean
+          target_weight_kg: number | null
+          updated_at: string
+          user_id: string
+          weight_kg: number | null
+        }
+        Insert: {
+          activity_level?: string | null
+          age?: number | null
+          created_at?: string
+          goal?: string | null
+          height_cm?: number | null
+          name?: string
+          onboarding_completed?: boolean
+          target_weight_kg?: number | null
+          updated_at?: string
+          user_id: string
+          weight_kg?: number | null
+        }
+        Update: {
+          activity_level?: string | null
+          age?: number | null
+          created_at?: string
+          goal?: string | null
+          height_cm?: number | null
+          name?: string
+          onboarding_completed?: boolean
+          target_weight_kg?: number | null
+          updated_at?: string
+          user_id?: string
+          weight_kg?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
