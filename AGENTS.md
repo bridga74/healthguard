@@ -12,3 +12,4 @@
 ## Project architecture
 
 - Public onboarding lives at `/`, `/register`, and `/onboarding`; the five main product screens use shared mobile chrome from `src/components/healthguard.tsx` to keep navigation consistent.
+- Profile and questionnaire answers live in `profiles` and `onboarding_answers` (one row per user, keyed by user_id, owner-only RLS); `profiles.onboarding_completed` decides post-login routing — single source of truth in the database, not auth metadata.
