@@ -28,7 +28,7 @@ function Welcome() {
       </div>
       <div className="grid gap-3">
         <Link to="/register" className="flex min-h-14 items-center justify-center rounded-xl bg-primary px-5 text-base font-semibold text-primary-foreground">Начать</Link>
-        <Link to="/today" className="flex min-h-12 items-center justify-center text-sm font-semibold text-primary">Посмотреть демо</Link>
+        <Link to="/login" className="flex min-h-12 items-center justify-center text-sm font-semibold text-primary">У меня уже есть аккаунт</Link>
       </div>
     </main>
   );
