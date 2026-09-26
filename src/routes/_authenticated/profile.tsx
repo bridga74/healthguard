@@ -10,7 +10,7 @@ export const Route = createFileRoute("/_authenticated/profile")({ head: () => ({
 
 function Profile() {
   const navigate = useNavigate(); const queryClient = useQueryClient(); const { user } = Route.useRouteContext();
-  const name = (user.user_metadata?.name as string | undefined) || "Пользователь";
+  const name = (user.user_metadata?.['name'] as string | undefined) || "Пользователь";
   async function signOut() { await queryClient.cancelQueries(); queryClient.clear(); await supabase.auth.signOut(); navigate({ to: "/login", replace: true }); }
   return <AppShell title="Профиль" action={<DemoBadge />}>
   <ScreenCard className="flex items-center gap-4"><div className="grid size-16 shrink-0 place-items-center rounded-full bg-secondary text-primary"><UserRound className="size-8" /></div><div className="min-w-0"><h2 className="truncate text-xl font-bold">{name}</h2><p className="truncate text-sm text-muted-foreground">{user.email}</p></div></ScreenCard>

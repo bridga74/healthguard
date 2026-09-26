@@ -25,5 +25,5 @@ export function translateAuthError(message?: string) {
 }
 
 export function homeFor(user: { user_metadata?: Record<string, unknown> } | null) {
-  return user?.user_metadata?.onboarding_completed ? "/today" : "/onboarding";
+  return user?.user_metadata?.['onboarding_completed'] ? "/today" : "/onboarding";
 }
