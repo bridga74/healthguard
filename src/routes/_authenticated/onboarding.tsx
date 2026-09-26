@@ -22,9 +22,9 @@ function Onboarding() {
   const { data, isLoading, error: loadError } = useQuery(profileQuery(user.id));
   const [step, setStep] = useState(0);
   const [nums, setNums] = useState({ age: "", height: "", weight: "" });
-  const [goal, setGoal] = useState(GOALS[0]);
-  const [activity, setActivity] = useState(ACTIVITY[1]);
-  const [diet, setDiet] = useState(DIETS[0]);
+  const [goal, setGoal] = useState<string>(GOALS[0]!);
+  const [activity, setActivity] = useState<string>(ACTIVITY[1]!);
+  const [diet, setDiet] = useState<string>(DIETS[0]!);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 
