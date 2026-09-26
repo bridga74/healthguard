@@ -2,8 +2,9 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ArrowLeft, Check, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { ActionButton } from "@/components/healthguard";
+import { supabase } from "@/integrations/supabase/client";
 
-export const Route = createFileRoute("/onboarding")({
+export const Route = createFileRoute("/_authenticated/onboarding")({
   head: () => ({ meta: [
     { title: "Анкета — HealthGuard" }, { name: "description", content: "Настройка персонального профиля HealthGuard." },
     { property: "og:title", content: "Анкета — HealthGuard" }, { property: "og:description", content: "Настройте цели и предпочтения в HealthGuard." },
@@ -13,8 +14,8 @@ export const Route = createFileRoute("/onboarding")({
 
 const steps = ["О вас", "Цель", "Активность", "Питание"];
 function Onboarding() {
-  const navigate = useNavigate({ from: "/onboarding" }); const [step, setStep] = useState(0);
-  const next = () => step < 3 ? setStep(step + 1) : navigate({ to: "/today" });
+  const navigate = useNavigate(); const [step, setStep] = useState(0);
+  const next = async () => { if (step < 3) return setStep(step + 1); await supabase.auth.updateUser({ data: { onboarding_completed: true } }); navigate({ to: "/today", replace: true }); };
   return <main className="mx-auto flex min-h-dvh w-full max-w-md flex-col bg-background px-5 py-7">
     <header className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3">
       <button aria-label="Назад" onClick={() => step ? setStep(step - 1) : history.back()} className="grid size-10 place-items-center rounded-full bg-card"><ArrowLeft className="size-5" /></button>

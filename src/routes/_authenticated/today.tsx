@@ -3,7 +3,7 @@ import { Bell, Droplets, Footprints, Plus, Utensils, Zap } from "lucide-react";
 import { useState } from "react";
 import { ActionButton, AppShell, DemoBadge, ProgressBar, ScreenCard } from "@/components/healthguard";
 
-export const Route = createFileRoute("/today")({
+export const Route = createFileRoute("/_authenticated/today")({
   head: () => ({ meta: [
     { title: "Сегодня — HealthGuard" }, { name: "description", content: "Дневная сводка питания, воды и активности." },
     { property: "og:title", content: "Сегодня — HealthGuard" }, { property: "og:description", content: "Дневная сводка здоровых привычек." },

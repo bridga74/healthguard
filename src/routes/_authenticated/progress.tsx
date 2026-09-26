@@ -3,7 +3,7 @@ import { Award, CalendarDays, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { AppShell, DemoBadge, ScreenCard } from "@/components/healthguard";
 
-export const Route = createFileRoute("/progress")({ head: () => ({ meta: [
+export const Route = createFileRoute("/_authenticated/progress")({ head: () => ({ meta: [
   { title: "Прогресс — HealthGuard" }, { name: "description", content: "Статистика здоровых привычек за 7 и 30 дней." }, { property: "og:title", content: "Прогресс — HealthGuard" }, { property: "og:description", content: "Наглядная статистика здоровых привычек." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
 ]}), component: Progress });
 
