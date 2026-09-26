@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Public onboarding lives at `/`, `/register`, and `/onboarding`; the five main product screens use shared mobile chrome from `src/components/healthguard.tsx` to keep navigation consistent.
