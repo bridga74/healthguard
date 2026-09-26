@@ -1,14 +1,58 @@
-# Welcome to your Lovable project
+# HealthGuard: Ваш Личный Гид
+
+Создай мобильное веб-приложение HealthGuard — персонализированный помощник по здоровому образу жизни на русском языке.
+
+Это университетский MVP, который должен выглядеть как современное профессиональное wellness-приложение, а не как лендинг или презентация.
+
+Создай следующие экраны с работающей навигацией между ними:
+
+Главная «Сегодня»: приветствие пользователя, карточки калорий, БЖУ, воды и шагов, индикаторы прогресса, кнопки «Добавить еду», «Добавить воду» и «Добавить активность».
+
+Питание: дневник приёмов пищи, категории «Завтрак», «Обед», «Ужин», «Перекус», кнопка добавления продукта.
+
+Активность: шаги, тренировки и продолжительность активности.
+
+Прогресс: статистика и графики за 7 и 30 дней.
+
+Профиль: имя, параметры пользователя, цель и настройки.
+
+Добавь отдельные экраны приветствия, регистрации и пошаговой анкеты с полями возраста, роста, веса, цели, уровня активности и предпочтений в питании.
+
+Дизайн:
+
+основной фон #F6F8F5;
+
+тёмно-зелёные кнопки #174C3C;
+
+светло-зелёные карточки #DDECE3;
+
+белые карточки со скруглением 16px;
+
+современный шрифт Inter;
+
+аккуратные линейные иконки;
+
+нижняя навигация из пяти вкладок;
+
+адаптация под экран смартфона.
+
+Используй русский язык во всех элементах интерфейса.
+
+На этом этапе создай качественный интерфейс, все страницы и переходы между ними. Не подключай платёжную систему, внешние API, медицинские AI-рекомендации или сложные интеграции.
+
+Не добавляй случайные данные, которые выглядят как реальные измерения пользователя. Если нужны примеры для дизайна, обозначь их как демонстрационные.
+
+Не переписывай проект в виде описания или документа. Создай само веб-приложение.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/ee2a6984-c312-4022-a143-b83bfad02e9d).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +64,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
