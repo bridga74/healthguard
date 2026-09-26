@@ -24,6 +24,9 @@ export function translateAuthError(message?: string) {
   return "Что-то пошло не так. Попробуйте ещё раз";
 }
 
-export function homeFor(user: { user_metadata?: Record<string, unknown> } | null) {
-  return user?.user_metadata?.['onboarding_completed'] ? "/today" : "/onboarding";
+export async function homeFor(user: { id: string } | null): Promise<"/today" | "/onboarding"> {
+  if (!user) return "/onboarding";
+  const { supabase } = await import("@/integrations/supabase/client");
+  const { data } = await supabase.from("profiles").select("onboarding_completed").eq("user_id", user.id).maybeSingle();
+  return data?.onboarding_completed ? "/today" : "/onboarding";
 }

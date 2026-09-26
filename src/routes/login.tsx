@@ -24,9 +24,9 @@ function Login() {
 
   useEffect(() => {
     // Also handles return from the email confirmation link.
-    supabase.auth.getUser().then(({ data }) => { if (data.user) navigate({ to: homeFor(data.user), replace: true }); });
+    supabase.auth.getUser().then(({ data }) => { if (data.user) homeFor(data.user).then((to) => navigate({ to, replace: true })); });
     const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "SIGNED_IN" && session?.user) navigate({ to: homeFor(session.user), replace: true });
+      if (event === "SIGNED_IN" && session?.user) homeFor(session.user).then((to) => navigate({ to, replace: true }));
     });
     return () => sub.subscription.unsubscribe();
   }, [navigate]);
@@ -40,7 +40,7 @@ function Login() {
     const { data, error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
     setLoading(false);
     if (error) return setError(translateAuthError(error.message));
-    navigate({ to: homeFor(data.user), replace: true });
+    navigate({ to: await homeFor(data.user), replace: true });
   }
 
   return <main className="mx-auto min-h-dvh w-full max-w-md bg-background px-5 py-7">

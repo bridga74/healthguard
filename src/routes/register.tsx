@@ -25,7 +25,7 @@ function Register() {
   const [sentTo, setSentTo] = useState<string | null>(null);
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => { if (data.user) navigate({ to: homeFor(data.user), replace: true }); });
+    supabase.auth.getUser().then(({ data }) => { if (data.user) homeFor(data.user).then((to) => navigate({ to, replace: true })); });
   }, [navigate]);
 
   async function submit(e: React.FormEvent) {
